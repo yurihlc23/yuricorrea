@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio | Yuri Corrêa</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --dark: #0f0f1a;
+            --light: #ffffff;
+            --gray: #b3b3c6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(120deg, #0f0f1a, #1a1a2e);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 60px 10%;
+            min-height: 85vh;
+        }
+
+        .hero-text h2 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        .hero-text span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            margin: 25px 0;
+            color: var(--gray);
+            max-width: 500px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(108, 99, 255, 0.6);
+        }
+
+        .socials {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .socials a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(108, 99, 255, 0.6);
+        }
+
+        .hero-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(0 0 30px rgba(108, 99, 255, 0.6));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* SERVIÇOS */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 20px;
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--gray);
+        }
+
+        /* RESPONSIVO */
+        @media(max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 20px auto;
+            }
+
+            .socials {
+                justify-content: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero-img lottie-player {
+                width: 600px !important;
+                height: 600px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Yuri Corrêa</h1>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Desenvolvo <span>Soluções Digitais</span><br>sob medida</h2>
+
+            <p>
+                Criação de sites personalizados, aplicativos para celular, sistemas,
+                design gráfico, edição de fotos e vídeos com foco em qualidade,
+                performance e estética moderna.
+            </p>
+
+            <a href="https://wa.me/5519999452067" target="_blank" class="btn" style="width: 220px; height: 50px;">
+               <center> Falar no WhatsApp</center>
+            </a>
+
+            <div class="socials">
+                <a href="https://www.instagram.com/yurih.correa" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/yuri-corr%C3%AAa-740a83293" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://github.com/yurihc23" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- ANIMAÇÃO -->
+        <div class="hero-img">
+            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_jtbfg2nb.json" background="transparent"
+                speed="1" style="width: 600px; height: 600px;" loop autoplay>
+            </lottie-player>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2 class="section-title">Meus Serviços</h2>
+
+        <div class="services">
+
+            <div class="card">
+                <h3>Desenvolvimento de Sites Personalizados</h3>
+                <p>
+                    Criação de sites institucionais, landing pages e portais sob medida,
+                    com design responsivo, alto desempenho, foco em SEO, acessibilidade
+                    e otimização para conversão.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Desenvolvimento de Aplicativos Mobile</h3>
+                <p>
+                    Desenvolvimento de aplicativos Android e iOS com foco em usabilidade,
+                    performance, escalabilidade e integração com APIs e serviços externos.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Sistemas Web e Soluções Corporativas</h3>
+                <p>
+                    Criação de sistemas web completos para gestão, controle de processos,
+                    automação de rotinas, dashboards e soluções personalizadas conforme
+                    a necessidade do negócio.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Design Gráfico e Produção Audiovisual</h3>
+                <p>
+                    Desenvolvimento de identidades visuais, materiais gráficos,
+                    edição profissional de imagens e vídeos, alinhados à estratégia
+                    e posicionamento da marca.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer id="contato">
+        <p>© 2026 - Yuri Corrêa | Desenvolvedor & Designer</p>
+    </footer>
+
+</body>
+
+</html>
